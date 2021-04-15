@@ -15,9 +15,13 @@ namespace CRAF.Formularios
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
+        private void btn_SeleccionarEjercicios_Click(object sender, EventArgs e)
+        {
+            frm_Ejercicios frm_ejercicios = new frm_Ejercicios();
+            frm_ejercicios.Show();
+            Hide();
+            
         }
     }
 }

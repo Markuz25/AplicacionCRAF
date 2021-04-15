@@ -98,6 +98,7 @@ namespace CRAF.Formularios
             this.btn_SeleccionarEjercicios.TabIndex = 1;
             this.btn_SeleccionarEjercicios.Text = "Seleccionar Ejercicios";
             this.btn_SeleccionarEjercicios.UseVisualStyleBackColor = false;
+            this.btn_SeleccionarEjercicios.Click += new System.EventHandler(this.btn_SeleccionarEjercicios_Click);
             // 
             // pictureBox2
             // 
