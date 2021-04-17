@@ -40,12 +40,14 @@ namespace CRAF.Formularios
             this.btn_ConsultarExpediente = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pnl_Agregar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Agregar
@@ -53,7 +55,7 @@ namespace CRAF.Formularios
             this.pnl_Agregar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pnl_Agregar.Controls.Add(this.btn_AgregarPaciente);
             this.pnl_Agregar.Controls.Add(this.pictureBox1);
-            this.pnl_Agregar.Location = new System.Drawing.Point(54, 105);
+            this.pnl_Agregar.Location = new System.Drawing.Point(64, 195);
             this.pnl_Agregar.Name = "pnl_Agregar";
             this.pnl_Agregar.Size = new System.Drawing.Size(176, 180);
             this.pnl_Agregar.TabIndex = 0;
@@ -83,7 +85,7 @@ namespace CRAF.Formularios
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.btn_SeleccionarEjercicios);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(677, 105);
+            this.panel1.Location = new System.Drawing.Point(687, 195);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 180);
             this.panel1.TabIndex = 1;
@@ -96,7 +98,7 @@ namespace CRAF.Formularios
             this.btn_SeleccionarEjercicios.Name = "btn_SeleccionarEjercicios";
             this.btn_SeleccionarEjercicios.Size = new System.Drawing.Size(124, 37);
             this.btn_SeleccionarEjercicios.TabIndex = 1;
-            this.btn_SeleccionarEjercicios.Text = "Seleccionar Ejercicios";
+            this.btn_SeleccionarEjercicios.Text = "Ejercicios";
             this.btn_SeleccionarEjercicios.UseVisualStyleBackColor = false;
             this.btn_SeleccionarEjercicios.Click += new System.EventHandler(this.btn_SeleccionarEjercicios_Click);
             // 
@@ -116,7 +118,7 @@ namespace CRAF.Formularios
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel2.Controls.Add(this.btn_ConsultarExpediente);
             this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Location = new System.Drawing.Point(363, 105);
+            this.panel2.Location = new System.Drawing.Point(373, 195);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(176, 180);
             this.panel2.TabIndex = 2;
@@ -145,11 +147,21 @@ namespace CRAF.Formularios
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(188, 23);
+            this.label1.Location = new System.Drawing.Point(282, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(581, 37);
             this.label1.TabIndex = 3;
             this.label1.Text = "Centro de Rehabilitación Acuática y Fisica";
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(39, 37);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(221, 121);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
             // 
             // frm_Principal
             // 
@@ -157,6 +169,7 @@ namespace CRAF.Formularios
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
             this.ClientSize = new System.Drawing.Size(914, 529);
+            this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -171,6 +184,7 @@ namespace CRAF.Formularios
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +202,6 @@ namespace CRAF.Formularios
         private System.Windows.Forms.Button btn_ConsultarExpediente;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
