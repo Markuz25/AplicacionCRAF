@@ -17,6 +17,7 @@ namespace CRAF.Formularios
             InitializeComponent();
         }
 
+        //Carga la imagen el pictureBox
         private void btn_Cargar_Click(object sender, EventArgs e)
         {
             try
@@ -91,6 +92,7 @@ namespace CRAF.Formularios
             
         }
 
+        //Selecciona la categoria indicada
         private void frm_CargarEjercicios_Load(object sender, EventArgs e)
         {
             cb_Categorias.SelectedIndex = 0;

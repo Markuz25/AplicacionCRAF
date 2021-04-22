@@ -5,16 +5,21 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-
 using System.IO;
-using iTextSharp;
-using iTextSharp.text;
-using iTextSharp.text.pdf;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
+using iText.Kernel.Pdf.Canvas.Draw;
+using Image = iText.Layout.Element.Image;
+using iText.IO.Image;
 
 namespace CRAF.Formularios
 {
     public partial class frm_Ejercicios : Form
     {
+
+
         public frm_Ejercicios()
         {
             InitializeComponent();
@@ -29,18 +34,107 @@ namespace CRAF.Formularios
 
         private void frm_Ejercicios_Load(object sender, EventArgs e)
         {
+            //Crea la carpeta correspondiente
+            CrearCarpeta();
+        }
+
+        //Creamos la carpeta donde se almacenaran las listas de los ejercicios
+        public void CrearCarpeta()
+        {
+            string ruta = Application.StartupPath + @"Lista de Ejercicios";
+            try
+            {
+                if (!Directory.Exists(ruta))
+                {
+                    Directory.CreateDirectory(ruta);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un Error :\n " + ex);
+            }
+        }
+
+        
+
+        //Crear PDF y plantilla correspondiente
+        public void crearEncabezadoPDF()
+        {
+            //Variables
+            string paciente = txtNombre.Text;
+            string edad = txtEdad.Text;
+            string recomendaciones = txt_Recomendaciones.Text;
+
+            //Concatenaciones
+            string datoNombrePaciente = lb_NombrePaciente.Text + paciente;
+            string datoEdadPaciente = lb_Edad.Text + edad;
+            string datoRecomendaciones = lb_Recomendaciones.Text + recomendaciones;
+
+            string ruta = string.Format(@"Lista de Ejercicios\{0}.pdf",txtNombre.Text);
+            PdfWriter writer = new PdfWriter(ruta);
+            PdfDocument pdf = new PdfDocument(writer);
+            Document document = new Document(pdf);
+            //Agregamos Logo de la Clinica
+            Image img = new Image(ImageDataFactory
+                .Create(@"Recursos\LogoCraf.jpg"))
+                .SetTextAlignment(TextAlignment.LEFT)
+                .ScaleToFit(250f, 250f);
+            document.Add(img);
+            //Titulo del documento
+            Paragraph header = new Paragraph("Centro de Rehabilitación Acuática y Fisica")
+               .SetTextAlignment(TextAlignment.RIGHT)
+               .SetFontSize(15);
+
+            document.Add(header);
+
+            //Insertamos linea de separacion
+            LineSeparator ls = new LineSeparator(new SolidLine());
+            document.Add(ls);
+
+            //Agregamos datos del paciente
+            Paragraph paciente_dato = new Paragraph(datoNombrePaciente).SetTextAlignment(TextAlignment.LEFT).SetFontSize(10);
+            Paragraph edad_dato = new Paragraph(datoEdadPaciente).SetTextAlignment(TextAlignment.LEFT).SetFontSize(10);
+            Paragraph recomendacion_dato = new Paragraph(datoRecomendaciones).SetTextAlignment(TextAlignment.LEFT).SetFontSize(10);
+            document.Add(paciente_dato);
+            document.Add(edad_dato);
+            document.Add(recomendacion_dato);
+            document.Close();
+
+            //Habilitamos el boton visualizar al momento de crear el Pdf
+            btn_Visualizar.Enabled = true;
 
         }
 
-        public void crearPDF()
+        //Creamos metodo para visualizar el Pdf creado
+        public void visualizarPDF()
         {
-            Document HojaDeEjercicio = new Document(PageSize.LETTER, 10, 10, 42, 35);
-           
+            string rutaCompleta = @"Lista de Ejercicios\" + txtNombre;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            crearPDF();
+            crearEncabezadoPDF();
+        }
+
+        //Validamos que solo se ingresen numeros en el txt_Edad
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsLetter(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
