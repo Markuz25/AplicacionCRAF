@@ -36,6 +36,8 @@ namespace CRAF.Formularios
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_Regresar
@@ -52,7 +54,7 @@ namespace CRAF.Formularios
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.label1.Location = new System.Drawing.Point(38, 43);
+            this.label1.Location = new System.Drawing.Point(37, 171);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 15);
             this.label1.TabIndex = 1;
@@ -72,7 +74,7 @@ namespace CRAF.Formularios
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.label2.Location = new System.Drawing.Point(123, 73);
+            this.label2.Location = new System.Drawing.Point(122, 201);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 3;
@@ -80,24 +82,37 @@ namespace CRAF.Formularios
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(165, 40);
+            this.txtNombre.Location = new System.Drawing.Point(164, 168);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(117, 23);
+            this.txtNombre.Size = new System.Drawing.Size(255, 23);
             this.txtNombre.TabIndex = 4;
             // 
             // txtEdad
             // 
-            this.txtEdad.Location = new System.Drawing.Point(165, 70);
+            this.txtEdad.Location = new System.Drawing.Point(164, 198);
             this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(117, 23);
+            this.txtEdad.Size = new System.Drawing.Size(78, 23);
             this.txtEdad.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(37, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(431, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // frm_Ejercicios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(914, 529);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.txtEdad);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label2);
@@ -107,8 +122,9 @@ namespace CRAF.Formularios
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_Ejercicios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Edad:";
+            this.Text = "Centro de Rehabilitacion Acuatica y Fisica";
             this.Load += new System.EventHandler(this.frm_Ejercicios_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +138,6 @@ namespace CRAF.Formularios
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -41,6 +41,9 @@ namespace CRAF.Formularios
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnCargar = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pnl_Agregar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -48,14 +51,16 @@ namespace CRAF.Formularios
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // pnl_Agregar
             // 
-            this.pnl_Agregar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pnl_Agregar.BackColor = System.Drawing.Color.SlateGray;
             this.pnl_Agregar.Controls.Add(this.btn_AgregarPaciente);
             this.pnl_Agregar.Controls.Add(this.pictureBox1);
-            this.pnl_Agregar.Location = new System.Drawing.Point(64, 195);
+            this.pnl_Agregar.Location = new System.Drawing.Point(50, 195);
             this.pnl_Agregar.Name = "pnl_Agregar";
             this.pnl_Agregar.Size = new System.Drawing.Size(176, 180);
             this.pnl_Agregar.TabIndex = 0;
@@ -82,10 +87,10 @@ namespace CRAF.Formularios
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.BackColor = System.Drawing.Color.SlateGray;
             this.panel1.Controls.Add(this.btn_SeleccionarEjercicios);
             this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Location = new System.Drawing.Point(687, 195);
+            this.panel1.Location = new System.Drawing.Point(494, 195);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 180);
             this.panel1.TabIndex = 1;
@@ -115,10 +120,10 @@ namespace CRAF.Formularios
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel2.BackColor = System.Drawing.Color.SlateGray;
             this.panel2.Controls.Add(this.btn_ConsultarExpediente);
             this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Location = new System.Drawing.Point(373, 195);
+            this.panel2.Location = new System.Drawing.Point(273, 195);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(176, 180);
             this.panel2.TabIndex = 2;
@@ -146,8 +151,9 @@ namespace CRAF.Formularios
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Azure;
             this.label1.Font = new System.Drawing.Font("Franklin Gothic Medium", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(282, 76);
+            this.label1.Location = new System.Drawing.Point(321, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(581, 37);
             this.label1.TabIndex = 3;
@@ -156,19 +162,55 @@ namespace CRAF.Formularios
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(39, 37);
+            this.pictureBox4.Location = new System.Drawing.Point(12, 22);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(221, 121);
+            this.pictureBox4.Size = new System.Drawing.Size(283, 140);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 4;
             this.pictureBox4.TabStop = false;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.SlateGray;
+            this.panel3.Controls.Add(this.btnCargar);
+            this.panel3.Controls.Add(this.pictureBox5);
+            this.panel3.Location = new System.Drawing.Point(706, 195);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(176, 180);
+            this.panel3.TabIndex = 2;
+            // 
+            // btnCargar
+            // 
+            this.btnCargar.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCargar.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCargar.Location = new System.Drawing.Point(24, 137);
+            this.btnCargar.Name = "btnCargar";
+            this.btnCargar.Size = new System.Drawing.Size(124, 37);
+            this.btnCargar.TabIndex = 1;
+            this.btnCargar.Text = "Cargar Ejercicios";
+            this.btnCargar.UseVisualStyleBackColor = false;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Azure;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(24, 12);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(124, 119);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 1;
+            this.pictureBox5.TabStop = false;
             // 
             // frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(914, 529);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
@@ -178,6 +220,7 @@ namespace CRAF.Formularios
             this.Name = "frm_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Centro de Rehabilitación Acuática y Fisica";
+            this.Load += new System.EventHandler(this.frm_Principal_Load);
             this.pnl_Agregar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -185,6 +228,8 @@ namespace CRAF.Formularios
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,5 +248,8 @@ namespace CRAF.Formularios
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnCargar;
+        private System.Windows.Forms.PictureBox pictureBox5;
     }
 }
