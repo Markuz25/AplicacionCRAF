@@ -12,6 +12,7 @@ using iText.Layout.Element;
 using iText.Layout.Properties;
 using iText.Kernel.Pdf.Canvas.Draw;
 using Image = iText.Layout.Element.Image;
+using Image1 = System.Drawing.Image;
 using iText.IO.Image;
 
 namespace CRAF.Formularios
@@ -173,6 +174,22 @@ namespace CRAF.Formularios
                 }
                 
             
+        }
+
+        private void btn_Seleccionar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (opn_SeleccionarImagen.ShowDialog() == DialogResult.OK)
+                {
+                    string imagen = opn_SeleccionarImagen.FileName;
+                    pb_Imagen.Image = Image1.FromFile(imagen);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido","Advertencia");
+            }
         }
     }
 }
