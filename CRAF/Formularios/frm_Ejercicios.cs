@@ -113,7 +113,16 @@ namespace CRAF.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            crearEncabezadoPDF();
+            if(MessageBox.Show("¿Desea agregar mas ejercicios al documento?","Confirmar creación", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                MessageBox.Show("Documento creado");
+                crearEncabezadoPDF();
+            }
+            else
+            {
+                MessageBox.Show("Agrege mas ejercicios");
+            }
+           
         }
 
         //Validamos que solo se ingresen numeros en el txt_Edad
@@ -134,6 +143,14 @@ namespace CRAF.Formularios
                 MessageBox.Show("Solo se permiten letras", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
                 return;
+            }
+        }
+
+        private void btn_CargarEjercicio_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea agregar este ejercicio?", "Agregar ejercicio", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                MessageBox.Show("Ejercicio agregado");
             }
         }
     }

@@ -46,6 +46,7 @@ namespace CRAF.Formularios
             this.lb_Indicaciones = new System.Windows.Forms.Label();
             this.txt_Indicaciones = new System.Windows.Forms.TextBox();
             this.opn_SeleccionarImagen = new System.Windows.Forms.OpenFileDialog();
+            this.btn_CargarEjercicio = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_Imagen)).BeginInit();
             this.SuspendLayout();
@@ -125,7 +126,7 @@ namespace CRAF.Formularios
             this.lb_Recomendaciones.AutoSize = true;
             this.lb_Recomendaciones.BackColor = System.Drawing.Color.MediumTurquoise;
             this.lb_Recomendaciones.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lb_Recomendaciones.Location = new System.Drawing.Point(3, 234);
+            this.lb_Recomendaciones.Location = new System.Drawing.Point(46, 230);
             this.lb_Recomendaciones.Name = "lb_Recomendaciones";
             this.lb_Recomendaciones.Size = new System.Drawing.Size(224, 21);
             this.lb_Recomendaciones.TabIndex = 7;
@@ -133,7 +134,7 @@ namespace CRAF.Formularios
             // 
             // txt_Recomendaciones
             // 
-            this.txt_Recomendaciones.Location = new System.Drawing.Point(233, 236);
+            this.txt_Recomendaciones.Location = new System.Drawing.Point(46, 269);
             this.txt_Recomendaciones.Multiline = true;
             this.txt_Recomendaciones.Name = "txt_Recomendaciones";
             this.txt_Recomendaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -194,15 +195,28 @@ namespace CRAF.Formularios
             // 
             // txt_Indicaciones
             // 
-            this.txt_Indicaciones.Location = new System.Drawing.Point(563, 278);
+            this.txt_Indicaciones.Location = new System.Drawing.Point(553, 278);
             this.txt_Indicaciones.Multiline = true;
             this.txt_Indicaciones.Name = "txt_Indicaciones";
-            this.txt_Indicaciones.Size = new System.Drawing.Size(339, 159);
+            this.txt_Indicaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_Indicaciones.Size = new System.Drawing.Size(339, 75);
             this.txt_Indicaciones.TabIndex = 14;
             // 
             // opn_SeleccionarImagen
             // 
             this.opn_SeleccionarImagen.FileName = "Seleccionar Imagen";
+            // 
+            // btn_CargarEjercicio
+            // 
+            this.btn_CargarEjercicio.Enabled = false;
+            this.btn_CargarEjercicio.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_CargarEjercicio.Location = new System.Drawing.Point(620, 382);
+            this.btn_CargarEjercicio.Name = "btn_CargarEjercicio";
+            this.btn_CargarEjercicio.Size = new System.Drawing.Size(204, 37);
+            this.btn_CargarEjercicio.TabIndex = 15;
+            this.btn_CargarEjercicio.Text = "Cargar al PDF";
+            this.btn_CargarEjercicio.UseVisualStyleBackColor = true;
+            this.btn_CargarEjercicio.Click += new System.EventHandler(this.btn_CargarEjercicio_Click);
             // 
             // frm_Ejercicios
             // 
@@ -212,6 +226,7 @@ namespace CRAF.Formularios
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(914, 529);
+            this.Controls.Add(this.btn_CargarEjercicio);
             this.Controls.Add(this.txt_Indicaciones);
             this.Controls.Add(this.lb_Indicaciones);
             this.Controls.Add(this.pb_Imagen);
@@ -257,5 +272,6 @@ namespace CRAF.Formularios
         private System.Windows.Forms.Label lb_Indicaciones;
         private System.Windows.Forms.TextBox txt_Indicaciones;
         private System.Windows.Forms.OpenFileDialog opn_SeleccionarImagen;
+        private System.Windows.Forms.Button btn_CargarEjercicio;
     }
 }
