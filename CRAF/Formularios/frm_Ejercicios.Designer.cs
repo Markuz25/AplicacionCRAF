@@ -75,6 +75,7 @@ namespace CRAF.Formularios
             // 
             // btn_Crear
             // 
+            this.btn_Crear.Enabled = false;
             this.btn_Crear.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Crear.Location = new System.Drawing.Point(234, 455);
             this.btn_Crear.Name = "btn_Crear";
@@ -126,7 +127,7 @@ namespace CRAF.Formularios
             this.lb_Recomendaciones.AutoSize = true;
             this.lb_Recomendaciones.BackColor = System.Drawing.Color.MediumTurquoise;
             this.lb_Recomendaciones.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lb_Recomendaciones.Location = new System.Drawing.Point(46, 230);
+            this.lb_Recomendaciones.Location = new System.Drawing.Point(149, 230);
             this.lb_Recomendaciones.Name = "lb_Recomendaciones";
             this.lb_Recomendaciones.Size = new System.Drawing.Size(224, 21);
             this.lb_Recomendaciones.TabIndex = 7;
@@ -134,11 +135,11 @@ namespace CRAF.Formularios
             // 
             // txt_Recomendaciones
             // 
-            this.txt_Recomendaciones.Location = new System.Drawing.Point(46, 269);
+            this.txt_Recomendaciones.Location = new System.Drawing.Point(68, 269);
             this.txt_Recomendaciones.Multiline = true;
             this.txt_Recomendaciones.Name = "txt_Recomendaciones";
             this.txt_Recomendaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_Recomendaciones.Size = new System.Drawing.Size(255, 150);
+            this.txt_Recomendaciones.Size = new System.Drawing.Size(402, 150);
             this.txt_Recomendaciones.TabIndex = 8;
             // 
             // btn_Visualizar
@@ -154,6 +155,7 @@ namespace CRAF.Formularios
             // 
             // btn_Imprimir
             // 
+            this.btn_Imprimir.Enabled = false;
             this.btn_Imprimir.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Imprimir.Location = new System.Drawing.Point(683, 455);
             this.btn_Imprimir.Name = "btn_Imprimir";
@@ -175,7 +177,6 @@ namespace CRAF.Formularios
             // pb_Imagen
             // 
             this.pb_Imagen.BackColor = System.Drawing.Color.Azure;
-            this.pb_Imagen.Image = ((System.Drawing.Image)(resources.GetObject("pb_Imagen.Image")));
             this.pb_Imagen.Location = new System.Drawing.Point(610, 64);
             this.pb_Imagen.Name = "pb_Imagen";
             this.pb_Imagen.Size = new System.Drawing.Size(223, 187);
@@ -199,7 +200,7 @@ namespace CRAF.Formularios
             this.txt_Indicaciones.Multiline = true;
             this.txt_Indicaciones.Name = "txt_Indicaciones";
             this.txt_Indicaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt_Indicaciones.Size = new System.Drawing.Size(339, 75);
+            this.txt_Indicaciones.Size = new System.Drawing.Size(339, 98);
             this.txt_Indicaciones.TabIndex = 14;
             // 
             // opn_SeleccionarImagen
@@ -208,7 +209,6 @@ namespace CRAF.Formularios
             // 
             // btn_CargarEjercicio
             // 
-            this.btn_CargarEjercicio.Enabled = false;
             this.btn_CargarEjercicio.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_CargarEjercicio.Location = new System.Drawing.Point(620, 382);
             this.btn_CargarEjercicio.Name = "btn_CargarEjercicio";

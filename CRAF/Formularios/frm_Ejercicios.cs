@@ -113,10 +113,12 @@ namespace CRAF.Formularios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Desea agregar mas ejercicios al documento?","Confirmar creación", MessageBoxButtons.YesNo) == DialogResult.No)
-            {
-                MessageBox.Show("Documento creado");
+            if(MessageBox.Show("¿Desea agregar más ejercicios al documento?","Confirmar creación", MessageBoxButtons.YesNo) == DialogResult.No)
+            {                
                 crearEncabezadoPDF();
+                MessageBox.Show("Documento creado");
+                btn_Visualizar.Enabled = true;
+                btn_Imprimir.Enabled = true;
             }
             else
             {
@@ -148,10 +150,29 @@ namespace CRAF.Formularios
 
         private void btn_CargarEjercicio_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea agregar este ejercicio?", "Agregar ejercicio", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                MessageBox.Show("Ejercicio agregado");
-            }
+            
+                try
+                {
+                    if (string.IsNullOrEmpty(txt_Indicaciones.Text) || (pb_Imagen.Image == null))
+                    {
+                        MessageBox.Show("No se han llenado los datos correspondiente", "Cuidado");
+                    }
+                    else
+                    {
+                        if (MessageBox.Show("¿Desea agregar este ejercicio?", "Agregar ejercicio", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            MessageBox.Show("Ejercicio agregado");
+                            btn_Crear.Enabled = true;
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error:\n"+ex.Message);
+                }
+                
+            
         }
     }
 }
