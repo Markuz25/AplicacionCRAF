@@ -14,6 +14,7 @@ using iText.Kernel.Pdf.Canvas.Draw;
 using Image = iText.Layout.Element.Image;
 using Image1 = System.Drawing.Image;
 using iText.IO.Image;
+using System.Diagnostics;
 
 namespace CRAF.Formularios
 {
@@ -42,7 +43,7 @@ namespace CRAF.Formularios
         //Creamos la carpeta donde se almacenaran las listas de los ejercicios
         public void CrearCarpeta()
         {
-            string ruta = Application.StartupPath + @"Lista de Ejercicios";
+            string ruta = Application.StartupPath + @"PacientesEjercicios";
             try
             {
                 if (!Directory.Exists(ruta))
@@ -71,7 +72,7 @@ namespace CRAF.Formularios
             string datoEdadPaciente = lb_Edad.Text + edad;
             string datoRecomendaciones = lb_Recomendaciones.Text + recomendaciones;
 
-            string ruta = string.Format(@"Lista de Ejercicios\{0}.pdf",txtNombre.Text);
+            string ruta = string.Format(@"PacientesEjercicios\{0}.pdf", txtNombre.Text);
             PdfWriter writer = new PdfWriter(ruta);
             PdfDocument pdf = new PdfDocument(writer);
             Document document = new Document(pdf);
@@ -106,25 +107,39 @@ namespace CRAF.Formularios
 
         }
 
-        //Creamos metodo para visualizar el Pdf creado
+        //Metodo para visualizar el Pdf creado
         public void visualizarPDF()
         {
-            string rutaCompleta = @"Lista de Ejercicios\" + txtNombre;
+            
+        }
+
+        //Metodo para imprimir el documento creado
+        public void imprimirPDF()
+        {
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("¿Desea agregar más ejercicios al documento?","Confirmar creación", MessageBoxButtons.YesNo) == DialogResult.No)
-            {                
-                crearEncabezadoPDF();
-                MessageBox.Show("Documento creado");
-                btn_Visualizar.Enabled = true;
-                btn_Imprimir.Enabled = true;
-            }
+            if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtEdad.Text) || string.IsNullOrEmpty(txt_Indicaciones.Text) || string.IsNullOrEmpty(txt_Recomendaciones.Text) || pb_Imagen.Image == null)
+            {
+                MessageBox.Show("No se han llenado los datos correspondientes","Advertencia");
+            }          
             else
             {
-                MessageBox.Show("Agrege mas ejercicios");
+                if (MessageBox.Show("¿Desea agregar más ejercicios al documento?", "Confirmar creación", MessageBoxButtons.YesNo) == DialogResult.No)
+                {
+                    crearEncabezadoPDF();
+                    MessageBox.Show("Documento creado","Confirmación");
+                    btn_Visualizar.Enabled = true;
+                    btn_Imprimir.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Agrege mas ejercicios","Importante");
+                }
             }
+            
            
         }
 
@@ -160,9 +175,9 @@ namespace CRAF.Formularios
                     }
                     else
                     {
-                        if (MessageBox.Show("¿Desea agregar este ejercicio?", "Agregar ejercicio", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        if (MessageBox.Show("¿Desea agregar este ejercicio?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            MessageBox.Show("Ejercicio agregado");
+                            MessageBox.Show("Ejercicio agregado","Confirmación");
                             btn_Crear.Enabled = true;
                         }
 
@@ -188,8 +203,21 @@ namespace CRAF.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido","Advertencia");
+                MessageBox.Show("El archivo seleccionado no es un tipo de imagen válido:\n"+ex.Message,"Advertencia");
             }
+        }
+
+        private void btn_Visualizar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                visualizarPDF();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se ha podido visualizar:\n" + ex.Message, "Error");
+            }
+            
         }
     }
 }

@@ -152,6 +152,7 @@ namespace CRAF.Formularios
             this.btn_Visualizar.TabIndex = 9;
             this.btn_Visualizar.Text = "Visualizar";
             this.btn_Visualizar.UseVisualStyleBackColor = true;
+            this.btn_Visualizar.Click += new System.EventHandler(this.btn_Visualizar_Click);
             // 
             // btn_Imprimir
             // 
