@@ -76,6 +76,7 @@ namespace CRAF.Formularios
             PdfWriter writer = new PdfWriter(ruta);
             PdfDocument pdf = new PdfDocument(writer);
             Document document = new Document(pdf);
+            document.SetMargins(20f, 20f, 20f, 20f);
             //Agregamos Logo de la Clinica
             Image img = new Image(ImageDataFactory
                 .Create(@"Recursos\LogoCraf.jpg"))
@@ -100,6 +101,15 @@ namespace CRAF.Formularios
             document.Add(paciente_dato);
             document.Add(edad_dato);
             document.Add(recomendacion_dato);
+            document.Add(ls);
+
+            //Agregamos las imagenes seleccionadas con los textos
+
+
+
+
+
+            //Cerramos documento
             document.Close();
 
             //Habilitamos el boton visualizar al momento de crear el Pdf
@@ -110,7 +120,8 @@ namespace CRAF.Formularios
         //Metodo para visualizar el Pdf creado
         public void visualizarPDF()
         {
-            
+            ProcessStartInfo starPDF = new ProcessStartInfo(string.Format(@"PacientesEjercicios\{0}.pdf", txtNombre.Text));
+            Process.Start(starPDF);
         }
 
         //Metodo para imprimir el documento creado
@@ -171,16 +182,15 @@ namespace CRAF.Formularios
                 {
                     if (string.IsNullOrEmpty(txt_Indicaciones.Text) || (pb_Imagen.Image == null))
                     {
-                        MessageBox.Show("No se han llenado los datos correspondiente", "Cuidado");
+                        MessageBox.Show("No se han llenado los datos correspondiente", "Advertencia");
                     }
                     else
                     {
                         if (MessageBox.Show("¿Desea agregar este ejercicio?", "Confirmación", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            MessageBox.Show("Ejercicio agregado","Confirmación");
+                            MessageBox.Show("Ejercicio agregado", "Confirmación");
                             btn_Crear.Enabled = true;
                         }
-
                     }
                 }
                 catch (Exception ex)
